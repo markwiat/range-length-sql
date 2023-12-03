@@ -83,6 +83,88 @@ BEGIN
 (12, 14, FALSE);
     PERFORM
         invoke_test(7);
+    DELETE FROM test_range;
+    INSERT INTO test_range(start_point, end_point, level)
+        VALUES(-4, -3, TRUE),
+(0, 20, TRUE),
+(21, 25, TRUE),
+(26, 30, TRUE),
+(31, 35, TRUE),
+(-1, 2, FALSE),
+(4, 8, FALSE),
+(10, 12, FALSE),
+(19, 22, FALSE);
+    PERFORM
+        invoke_test(23);
+    DELETE FROM test_range;
+    INSERT INTO test_range(start_point, end_point, level)
+        VALUES(2, 10, TRUE),
+(20, 100, TRUE),
+(0, 1, FALSE),
+(30, 40, FALSE),
+(50, 60, FALSE);
+    PERFORM
+        invoke_test(68);
+    DELETE FROM test_range;
+    INSERT INTO test_range(start_point, end_point, level)
+        VALUES(2, 10, TRUE),
+(20, 100, TRUE),
+(0, 1, FALSE),
+(11, 14, FALSE),
+(30, 40, FALSE),
+(50, 60, FALSE);
+    PERFORM
+        invoke_test(68);
+    DELETE FROM test_range;
+    INSERT INTO test_range(start_point, end_point, level)
+        VALUES(2, 10, TRUE),
+(20, 100, TRUE),
+(300, 400, TRUE),
+(0, 1, FALSE),
+(11, 14, FALSE),
+(15, 18, FALSE),
+(30, 40, FALSE),
+(50, 60, FALSE),
+(150, 160, FALSE),
+(170, 180, FALSE),
+(280, 320, FALSE);
+    PERFORM
+        invoke_test(148);
+    DELETE FROM test_range;
+    INSERT INTO test_range(start_point, end_point, level)
+        VALUES(2, 10, TRUE),
+(20, 100, TRUE),
+(0, 1, FALSE),
+(-5, -2, FALSE);
+    PERFORM
+        invoke_test(88);
+    DELETE FROM test_range;
+    INSERT INTO test_range(start_point, end_point, level)
+        VALUES(-4, -3, TRUE),
+(0, 3, TRUE),
+(5, 8, TRUE),
+(10, 15, TRUE),
+(-2, 14, FALSE);
+    PERFORM
+        invoke_test(2);
+    DELETE FROM test_range;
+    INSERT INTO test_range(start_point, end_point, level)
+        VALUES(-4, -3, TRUE),
+(0, 3, TRUE),
+(5, 8, TRUE),
+(10, 15, TRUE),
+(-4, 15, FALSE);
+    PERFORM
+        invoke_test(0);
+    DELETE FROM test_range;
+    INSERT INTO test_range(start_point, end_point, level)
+        VALUES(-4, -3, TRUE),
+(0, 3, TRUE),
+(5, 8, TRUE),
+(10, 15, TRUE),
+(-5, 16, FALSE);
+    PERFORM
+        invoke_test(0);
 END
 $$
 LANGUAGE 'plpgsql'

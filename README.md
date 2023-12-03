@@ -1,2 +1,3 @@
 # range-length-sql
-Calculates length of overlapped ranges
+
+This is a SQl version of `SubtractFromSuperSpans` function from [range-subtractor](https://github.com/markwiat/range-subtractor) project.
